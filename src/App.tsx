@@ -1,30 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import InputField from './components/inputfield';
+import { Todo } from './model';
 
-let name: string = 'Anusha';
-let age: number = 20;
-let isStudent: boolean;
-let hobbies: string[];
-let role: [number, string];
+const App: React.FC = () => {
 
-let personName: any; // any type
-let personAge: unknown;
+  const [todo, setTodo] = useState<string>("");
+  const [todos, setTodos] = useState<Todo[]>();
 
-type Person = {
-  name: string;
-  age?: number;   // optional 
-}
+  const handleAdd = () => {
 
-let person: Person = {
-  name: 'anusha',
-  age: 5
-}
-
-function App() {
+  }
+  
   return (
     <div className="App">
-      Hello
+      <span className="heading">Taskify</span>
+      <InputField todo={todo} setTodo={setTodo}/>
     </div>
   );
 }
